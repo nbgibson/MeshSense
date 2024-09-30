@@ -1,9 +1,7 @@
 FROM node
 RUN apt-get update
-RUN apt install cmake -y
 WORKDIR /app
 RUN git clone https://github.com/Affirmatech/MeshSense.git .
-#COPY ../* .
 
 WORKDIR /app/api
 RUN npm install

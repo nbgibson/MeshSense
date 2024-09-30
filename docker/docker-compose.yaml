@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  meshsense:
+    container_name: meshsense
+    image: meshsense:latest
+    restart: unless-stopped
+    ports:
+      - 5920:5920
+    volumes:
+      - /path/to/config:/root/.local/share/meshsense/
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket:ro # OPTIONAL: Needed for BLE based nodes.
+networks: {}
